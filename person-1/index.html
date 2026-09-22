@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter For You</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body
+    class="sunny-page"
+    data-name="Afeefa"
+    data-person="person-1"
+>
+
+    <div class="garden-background">
+
+        <span class="garden-flower flower-a">✿</span>
+        <span class="garden-flower flower-b">✿</span>
+        <span class="garden-flower flower-c">✿</span>
+
+        <span class="garden-leaf leaf-a">🍃</span>
+        <span class="garden-leaf leaf-b">🍃</span>
+
+        <span class="garden-butterfly butterfly-a">🦋</span>
+        <span class="garden-butterfly butterfly-b">🦋</span>
+
+        <span class="garden-sparkle sparkle-a">✦</span>
+        <span class="garden-sparkle sparkle-b">✧</span>
+
+        <div class="grass grass-left"></div>
+        <div class="grass grass-right"></div>
+
+    </div>
+
+    <div id="confetti-container"></div>
+
+    <div class="page">
+
+        <header>
+
+            <p class="small-title">
+                A little something for you
+            </p>
+
+            <h1>
+                You've got mail 💌
+            </h1>
+
+            <p class="subtitle">
+                Something special is waiting for you.
+            </p>
+
+        </header>
+
+        <main>
+
+            <div class="envelope-area">
+
+                <div class="envelope" id="envelope">
+
+                    <div class="letter">
+
+                        <div class="letter-paper"></div>
+
+                    </div>
+
+                    <div class="envelope-back">
+
+                        <div class="decor butterfly butterfly-one">
+
+                            <span class="wing left"></span>
+                            <span class="wing right"></span>
+                            <span class="body"></span>
+
+                        </div>
+
+                        <div class="decor butterfly butterfly-two">
+
+                            <span class="wing left"></span>
+                            <span class="wing right"></span>
+                            <span class="body"></span>
+
+                        </div>
+
+                        <div class="decor sun">
+
+                            <span></span>
+
+                        </div>
+
+                        <div class="decor rainbow">
+
+                            <i></i>
+                            <i></i>
+                            <i></i>
+
+                        </div>
+
+                        <div class="decor sunflower">
+
+                            <span class="petal p1"></span>
+                            <span class="petal p2"></span>
+                            <span class="petal p3"></span>
+                            <span class="petal p4"></span>
+                            <span class="petal p5"></span>
+                            <span class="petal p6"></span>
+
+                            <span class="center"></span>
+                            <span class="stem"></span>
+                            <span class="leaf"></span>
+
+                        </div>
+
+                        <div class="decor mushroom mushroom-one">
+
+                            <span class="cap">
+
+                                <i></i>
+                                <i></i>
+                                <i></i>
+
+                            </span>
+
+                            <span class="stem"></span>
+
+                        </div>
+
+                        <div class="decor flower">
+
+                            <span class="petal p1"></span>
+                            <span class="petal p2"></span>
+                            <span class="petal p3"></span>
+                            <span class="petal p4"></span>
+
+                            <span class="center"></span>
+                            <span class="stem"></span>
+
+                        </div>
+
+                        <span class="tiny-star star-one">✦</span>
+                        <span class="tiny-star star-two">✦</span>
+
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap"></div>
+
+                    <div class="name">
+
+                        Dear <span id="personName"></span> ♡
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button
+                class="open-button"
+                id="openButton"
+            >
+                Open your envelope
+            </button>
+
+        </main>
+
+    </div>
+
+    <div
+        class="puzzle-overlay"
+        id="puzzleOverlay"
+    >
+
+        <div class="puzzle-box">
+
+            <button
+                class="close-button"
+                id="closePuzzle"
+            >
+                ×
+            </button>
+
+            <div class="lock">
+                🔐
+            </div>
+
+            <h2>
+                Before you open it...
+            </h2>
+
+            <p id="question"></p>
+
+            <input
+                type="text"
+                id="answer"
+                placeholder="Your answer"
+                autocomplete="off"
+            >
+
+            <button
+                class="unlock-button"
+                id="unlockButton"
+            >
+                Unlock Letter
+            </button>
+
+            <p
+                class="message"
+                id="message"
+            ></p>
+
+        </div>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>

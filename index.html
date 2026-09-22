@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Something For You 💌</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #5e5058;
+            position: relative;
+            background:
+                radial-gradient(circle at 20% 15%, #fffdf6 0%, transparent 28%),
+                radial-gradient(circle at 85% 85%, #fff8fb 0%, transparent 30%),
+                linear-gradient(135deg, #fff9eb 0%, #f9eff2 48%, #f0eafa 100%);
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.35;
+            background-image:
+                radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        /* ===== FLORAL DECORATION ===== */
+
+        .garden {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .flower,
+        .leaf,
+        .butterfly,
+        .sparkle,
+        .petal {
+            position: absolute;
+            user-select: none;
+        }
+
+        .flower {
+            opacity: 0.8;
+            animation: sway 5s ease-in-out infinite;
+        }
+
+        .flower.f1 {
+            left: 4%;
+            bottom: 10%;
+            font-size: 38px;
+        }
+
+        .flower.f2 {
+            left: 10%;
+            top: 12%;
+            font-size: 25px;
+            animation-delay: 1s;
+        }
+
+        .flower.f3 {
+            right: 5%;
+            top: 11%;
+            font-size: 34px;
+            animation-delay: 1.8s;
+        }
+
+        .flower.f4 {
+            right: 9%;
+            bottom: 12%;
+            font-size: 42px;
+            animation-delay: 2.6s;
+        }
+
+        .flower.f5 {
+            left: 17%;
+            bottom: 4%;
+            font-size: 22px;
+            animation-delay: 0.7s;
+        }
+
+        .flower.f6 {
+            right: 19%;
+            top: 7%;
+            font-size: 21px;
+            animation-delay: 2s;
+        }
+
+        .leaf {
+            font-size: 30px;
+            opacity: 0.48;
+        }
+
+        .leaf.l1 {
+            left: 3%;
+            top: 43%;
+            transform: rotate(-25deg);
+        }
+
+        .leaf.l2 {
+            right: 3%;
+            top: 45%;
+            transform: rotate(25deg);
+        }
+
+        .leaf.l3 {
+            left: 20%;
+            top: 5%;
+            font-size: 22px;
+            transform: rotate(-12deg);
+        }
+
+        .leaf.l4 {
+            right: 20%;
+            bottom: 5%;
+            font-size: 22px;
+            transform: rotate(18deg);
+        }
+
+        .butterfly {
+            font-size: 27px;
+            opacity: 0.78;
+        }
+
+        .butterfly.b1 {
+            left: 12%;
+            top: 28%;
+            animation: flutter 7s ease-in-out infinite;
+        }
+
+        .butterfly.b2 {
+            right: 12%;
+            bottom: 27%;
+            animation: flutter 8s ease-in-out infinite reverse;
+        }
+
+        .sparkle {
+            color: #d6aa65;
+            font-size: 22px;
+            opacity: 0.65;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        .sparkle.s1 {
+            left: 24%;
+            top: 19%;
+        }
+
+        .sparkle.s2 {
+            right: 23%;
+            top: 22%;
+            animation-delay: 1.1s;
+        }
+
+        .sparkle.s3 {
+            left: 19%;
+            bottom: 21%;
+            animation-delay: 2s;
+        }
+
+        .sparkle.s4 {
+            right: 20%;
+            bottom: 17%;
+            animation-delay: 0.8s;
+        }
+
+        /* ===== FLORAL CORNERS ===== */
+
+        .corner {
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            opacity: 0.78;
+        }
+
+        .corner::before,
+        .corner::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .corner.top-left {
+            left: -55px;
+            top: -50px;
+            border: 2px solid rgba(133, 160, 111, 0.22);
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            transform: rotate(25deg);
+        }
+
+        .corner.bottom-right {
+            right: -55px;
+            bottom: -50px;
+            border: 2px solid rgba(133, 160, 111, 0.22);
+            border-left-color: transparent;
+            border-top-color: transparent;
+            border-radius: 50%;
+            transform: rotate(25deg);
+        }
+
+        /* ===== MAIN CARD ===== */
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 3;
+            padding: 22px;
+        }
+
+        .card {
+            width: min(470px, 100%);
+            padding: 42px 36px 35px;
+            text-align: center;
+            position: relative;
+            border-radius: 32px;
+            background: rgba(255,255,255,0.84);
+            border: 1px solid rgba(255,255,255,0.95);
+            box-shadow:
+                0 28px 70px rgba(103, 81, 96, 0.15),
+                0 6px 22px rgba(103, 81, 96, 0.07);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .card::before {
+            content: "✿";
+            position: absolute;
+            top: 13px;
+            left: 19px;
+            font-size: 21px;
+            color: #cda5ae;
+            opacity: 0.55;
+        }
+
+        .card::after {
+            content: "❀";
+            position: absolute;
+            right: 19px;
+            bottom: 12px;
+            font-size: 21px;
+            color: #b7a5c6;
+            opacity: 0.55;
+        }
+
+        .mini {
+            margin-bottom: 16px;
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #a48b96;
+        }
+
+        /* ===== ENVELOPE ICON ===== */
+
+        .envelope-icon {
+            width: 94px;
+            height: 66px;
+            margin: 0 auto 24px;
+            position: relative;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #f7ddb0, #efc985);
+            box-shadow: 0 10px 24px rgba(170, 126, 67, 0.16);
+        }
+
+        .envelope-icon::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            clip-path: polygon(0 0, 50% 52%, 100% 0);
+            background: linear-gradient(145deg, #f4d89f, #eac37a);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .envelope-icon::after {
+            content: "♡";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(9px);
+            color: rgba(119, 84, 68, 0.58);
+            font-size: 23px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #5e4d58;
+            font-size: clamp(31px, 7vw, 42px);
+            line-height: 1.13;
+            font-weight: 500;
+        }
+
+        .subtitle {
+            max-width: 350px;
+            margin: 15px auto 28px;
+            color: #7c6e76;
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .code-label {
+            display: block;
+            margin-bottom: 9px;
+            color: #927f89;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid #e2d6df;
+            border-radius: 15px;
+            outline: none;
+            background: rgba(255,255,255,0.94);
+            color: #5f535a;
+            font-family: inherit;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 1px;
+            transition: 0.25s ease;
+        }
+
+        input::placeholder {
+            color: #b3a4ac;
+            letter-spacing: 0;
+        }
+
+        input:focus {
+            border-color: #c39ab4;
+            box-shadow: 0 0 0 4px rgba(195,154,180,0.12);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 13px;
+            padding: 15px 18px;
+            border: none;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #c18fa7, #b07e98);
+            color: white;
+            font-family: inherit;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 10px 22px rgba(176,126,152,0.2);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 27px rgba(176,126,152,0.25);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .message {
+            min-height: 22px;
+            margin: 15px 0 0;
+            color: #b2687d;
+            font-size: 14px;
+        }
+
+        .bottom-text {
+            margin: 23px 0 0;
+            color: #a3959e;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .heart {
+            display: inline-block;
+            color: #c58ca0;
+            animation: heartbeat 2.4s ease-in-out infinite;
+        }
+
+        /* ===== ANIMATIONS ===== */
+
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(-3deg);
+            }
+
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        @keyframes flutter {
+            0%, 100% {
+                transform: translate(0, 0) rotate(-3deg);
+            }
+
+            50% {
+                transform: translate(13px, -10px) rotate(3deg);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(0.85);
+            }
+
+            50% {
+                opacity: 0.9;
+                transform: scale(1.08);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .page {
+                padding: 16px;
+            }
+
+            .card {
+                padding: 36px 23px 30px;
+                border-radius: 27px;
+            }
+
+            .flower.f1 {
+                left: 0;
+            }
+
+            .flower.f4 {
+                right: 0;
+            }
+
+            .butterfly.b1 {
+                left: 2%;
+            }
+
+            .butterfly.b2 {
+                right: 2%;
+            }
+
+            .leaf.l1,
+            .leaf.l2,
+            .leaf.l3,
+            .leaf.l4,
+            .sparkle.s3,
+            .sparkle.s4 {
+                display: none;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="garden">
+
+        <div class="corner top-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <span class="flower f1">🌼</span>
+        <span class="flower f2">🌸</span>
+        <span class="flower f3">🌷</span>
+        <span class="flower f4">🌻</span>
+        <span class="flower f5">✿</span>
+        <span class="flower f6">❀</span>
+
+        <span class="leaf l1">🍃</span>
+        <span class="leaf l2">🍃</span>
+        <span class="leaf l3">🌿</span>
+        <span class="leaf l4">🌿</span>
+
+        <span class="butterfly b1">🦋</span>
+        <span class="butterfly b2">🦋</span>
+
+        <span class="sparkle s1">✦</span>
+        <span class="sparkle s2">✧</span>
+        <span class="sparkle s3">✦</span>
+        <span class="sparkle s4">✧</span>
+
+    </div>
+
+    <div class="page">
+
+        <div class="card">
+
+            <div class="mini">
+                A little secret awaits
+            </div>
+
+            <div class="envelope-icon"></div>
+
+            <h1>
+                A Little Something<br>
+                For You 💌
+            </h1>
+
+            <p class="subtitle">
+                Somewhere in this little garden,
+                a letter has been waiting just for you.
+            </p>
+
+            <label class="code-label" for="code">
+                Enter your secret code
+            </label>
+
+            <input
+                type="text"
+                id="code"
+                placeholder="Your secret code"
+                autocomplete="off"
+            >
+
+            <button id="continueButton">
+                Open My Letter
+            </button>
+
+            <p class="message" id="message"></p>
+
+            <p class="bottom-text">
+                Your code was given to you personally
+                <span class="heart">♡</span>
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+        const codes = {
+            "SOLIEL96": "person-1/index.html",
+            "FLORA10": "person-2/index.html",
+            "LILAC16": "person-3/index.html"
+        };
+
+        const codeInput =
+            document.getElementById("code");
+
+        const continueButton =
+            document.getElementById("continueButton");
+
+        const message =
+            document.getElementById("message");
+
+        function checkCode() {
+
+            const code =
+                codeInput.value
+                    .trim()
+                    .toUpperCase();
+
+            if (codes[code]) {
+
+                window.location.href =
+                    codes[code];
+
+            } else {
+
+                message.textContent =
+                    "That code doesn't seem right... try again ♡";
+
+                codeInput.focus();
+            }
+        }
+
+        continueButton.addEventListener(
+            "click",
+            checkCode
+        );
+
+        codeInput.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (event.key === "Enter") {
+                    checkCode();
+                }
+
+            }
+        );
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter For You</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body
+    class="floral-page"
+    data-name="Bhavya"
+    data-person="person-2"
+>
+
+    <div id="confetti-container"></div>
+
+    <div class="page">
+
+        <header>
+            <p class="small-title">A little something for you</p>
+            <h1>A letter just for you 🌸</h1>
+            <p class="subtitle">Something special is waiting for you.</p>
+        </header>
+
+        <main>
+
+            <div class="envelope-area">
+
+                <div class="envelope floral-envelope" id="envelope">
+
+                    <div class="letter">
+                        <div class="letter-paper"></div>
+                    </div>
+
+                    <div class="envelope-back">
+
+                        <div class="floral-corner top-left">
+                            <span class="flower flower-large"></span>
+                            <span class="flower flower-small"></span>
+                            <span class="leaf leaf-one"></span>
+                            <span class="leaf leaf-two"></span>
+                        </div>
+
+                        <div class="floral-corner top-right">
+                            <span class="flower flower-large pink"></span>
+                            <span class="flower flower-small light"></span>
+                            <span class="leaf leaf-one"></span>
+                            <span class="leaf leaf-two"></span>
+                        </div>
+
+                        <div class="floral-corner bottom-left">
+                            <span class="flower flower-large rose"></span>
+                            <span class="flower flower-small"></span>
+                            <span class="leaf leaf-one"></span>
+                            <span class="leaf leaf-two"></span>
+                        </div>
+
+                        <div class="floral-corner bottom-right">
+                            <span class="flower flower-large pink"></span>
+                            <span class="flower flower-small light"></span>
+                            <span class="leaf leaf-one"></span>
+                            <span class="leaf leaf-two"></span>
+                        </div>
+
+                        <div class="tiny-leaf leaf-mid-one"></div>
+                        <div class="tiny-leaf leaf-mid-two"></div>
+
+                    </div>
+
+                    <div class="envelope-front"></div>
+
+                    <div class="envelope-flap"></div>
+
+                    <div class="name">
+                        Dear <span id="personName"></span> ♡
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="open-button" id="openButton">
+                Open your envelope
+            </button>
+
+        </main>
+
+    </div>
+
+    <div class="puzzle-overlay" id="puzzleOverlay">
+
+        <div class="puzzle-box">
+
+            <button class="close-button" id="closePuzzle">×</button>
+
+            <div class="lock">🔐</div>
+
+            <h2>Before you open it...</h2>
+
+            <p id="question"></p>
+
+            <input
+                type="text"
+                id="answer"
+                placeholder="Your answer"
+                autocomplete="off"
+            >
+
+            <button class="unlock-button" id="unlockButton">
+                Unlock Letter
+            </button>
+
+            <p class="message" id="message"></p>
+
+        </div>
+
+    </div>
+
+    <script src="../script.js"></script>
+
+</body>
+</html>
