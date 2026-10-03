@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         "person-1": [
             {
+                image: "../letters/person-1/letter-2.png",
+                question: "What is my favourite Hindi song in the recent times",
+                answer: "Finding Her"
+            },
+
+            {
                 image: "../letters/person-1/letter-1.png",
                 question: "What was I named first",
                 answer: "Jahnavi"
@@ -16,6 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
 
         "person-2": [
+            {
+                image: "../letters/person-2/letter-2.png",
+                question: "Whhat is the name of my school",
+                answer: "PEN school"
+            },
+
             {
                 image: "../letters/person-2/letter-1.png",
                 question: "What is my favourite color",
@@ -25,8 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         "person-3": [
             {
+                image: "../letters/person-3/letter-2.png",
+                question: "What is my favourite movie",
+                answer: "Godavari"
+            },
+
+            {
                 image: "../letters/person-3/letter-1.png",
-                question: "Which character do I hate the most in TSTP",
+                question: "Which character do I hate the most in TSITP",
                 answer: "Isabel"
             },
         ]
