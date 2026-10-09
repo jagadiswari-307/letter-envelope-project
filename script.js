@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const letterSets = {
 
         "person-1": [
+              {
+                image: "../letters/person-1/letter-3.png",
+                question: "What is my favourite season?",
+                answer: "Winter"
+            },
+
             {
                 image: "../letters/person-1/letter-2.png",
                 question: "What is my favourite Hindi song in the recent times",
@@ -15,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
             {
+
+                
                 image: "../letters/person-1/letter-1.png",
                 question: "What was I named first",
                 answer: "Jahnavi"
@@ -22,10 +30,23 @@ document.addEventListener("DOMContentLoaded", () => {
         ],
 
         "person-2": [
+             {
+                image: "../letters/person-2/letter-4.png",
+                 question: "Enter your code",
+                answer: "Flora10"
+               
+            },
+
+             {
+                image: "../letters/person-2/letter-3.png",
+                question: "What is my Favourite food?",
+                answer: "Crab curry"
+            },
+
             {
                 image: "../letters/person-2/letter-2.png",
-                question: "Whhat is the name of my school",
-                answer: "PEN school"
+                question: "What is the name of my school (write in block letters)",
+                answer: "PEN SCHOOL"
             },
 
             {
